@@ -1,0 +1,33 @@
+# Spring properties
+spring:
+  application:
+     name: building-service  # Service registers under this name
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  thymeleaf:
+    cache: false             # Allow Thymeleaf templates to be reloaded at runtime
+
+server:
+  port: 8083
+
+# Map the error path to error template (for Thymeleaf)
+error:
+  path=/error
+
+# Discovery Server Access
+eureka:
+    instance:
+        leaseRenewalIntervalInSeconds: 3
+        leaseExpirationDurationInSeconds: 2
+        metadataMap:
+            instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+
+    client:
+        registryFetchIntervalSeconds: 5
+        instanceInfoReplicationIntervalSeconds: 5
+        initialInstanceInfoReplicationIntervalSeconds: 5
+        serviceUrl:
+            defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:8080}/eureka/
+        fetchRegistry: true
+        healthcheck:
+            enabled: true

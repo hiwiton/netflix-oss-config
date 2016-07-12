@@ -1,0 +1,24 @@
+info:
+    component: Turbine Server
+
+server:
+    port: 8989
+
+management:
+    port: 8990
+
+turbine:
+    aggregator:
+        clusterConfig: USER-SERVICE,CAPABILITIES-SERVICE,BUILDING-SERVICE
+#    clusterNameExpression: new String("default")
+    appConfig: user-service,capabilities-service, building-service
+#    clusterNameExpression: 'default'
+#    InstanceMonitor:
+#        eventStream:
+#            skipLineLogic: false
+
+logging:
+    level:
+        root: INFO
+        com.netflix.discovery: 'OFF'
+        org.springframework.integration: DEBUG

@@ -1,6 +1,6 @@
 # Yureka Server Configuration
 server:
-  port: 9080   # HTTP port
+  port: 8080   # HTTP port
 
 eureka:
   instance:

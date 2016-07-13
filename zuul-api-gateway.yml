@@ -24,6 +24,10 @@ zuul:
             path: /capabilitiesapi/**
             serviceId: CAPABILITIES-SERVICE
             stripPrefix: true
+        capabilitiesapi:
+            path: /buildingsapi/**
+            serviceId: BUILDINGS-SERVICE
+            stripPrefix: true
 
 server:
     port: 8085

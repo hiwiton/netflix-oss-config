@@ -8,8 +8,12 @@ eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
+    serviceUrl:
+      defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:8080}/eureka/
+
   server:
     waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: false
 
 # Discovery Server Dashboard uses FreeMarker.  Don't want Thymeleaf templates
 spring:

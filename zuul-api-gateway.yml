@@ -24,7 +24,7 @@ zuul:
             path: /capabilitiesapi/**
             serviceId: CAPABILITIES-SERVICE
             stripPrefix: true
-        capabilitiesapi:
+        buildingsapi:
             path: /buildingsapi/**
             serviceId: BUILDINGS-SERVICE
             stripPrefix: true

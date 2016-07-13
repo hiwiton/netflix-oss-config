@@ -2,10 +2,10 @@ info:
     component: Turbine Server
 
 server:
-    port: 8989
+    port: 9090
 
 management:
-    port: 8990
+    port: 9091
 
 turbine:
     aggregator:

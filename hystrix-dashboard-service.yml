@@ -8,7 +8,7 @@ spring:
     cache: false             # Allow Thymeleaf templates to be reloaded at runtime
 
 server:
-  port: 9009
+  port: 7979
 
 # Map the error path to error template (for Thymeleaf)
 error:

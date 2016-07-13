@@ -26,7 +26,7 @@ zuul:
             stripPrefix: true
         buildingsapi:
             path: /buildingsapi/**
-            serviceId: BUILDINGS-SERVICE
+            serviceId: BUILDING-SERVICE
             stripPrefix: true
 
 server:

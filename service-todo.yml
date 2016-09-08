@@ -1,15 +1,13 @@
 # Spring properties
 spring:
   application:
-     name: service-todo  # Service registers under this name
+    name: service-todo  # Service registers under this name
+  profiles:
+    active: local
   freemarker:
     enabled: false           # Ignore Eureka dashboard FreeMarker templates
   thymeleaf:
     cache: false             # Allow Thymeleaf templates to be reloaded at runtime
-  datasource:
-    url: jdbc:postgresql://192.168.99.100:5432/cdf
-    username: cdf
-    password: cdf
   jackson:
     serialization:
       write_dates_as_timestamps: false
@@ -17,14 +15,29 @@ spring:
   jpa:
     generate-ddl: true
     hibernate:
-      ddl-auto: create-drop
-
+      ddl-auto: create
+---
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:postgresql://192.168.99.100:5432/cdf
+    username: cdf
+    password: cdf
+---
+spring:
+  profiles: develop
+  datasource:
+    url: jdbc:postgresql://10.18.16.243:5432/cdf
+    username: cdf
+    password: cdf
+---
 server:
   port: 8081
 
 # Map the error path to error template (for Thymeleaf)
 error:
   path=/error
+
 
 # Discovery Server Access
 eureka:
